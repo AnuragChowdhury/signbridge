@@ -26,8 +26,7 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
-          flutter-version: '3.27.x' # Or use 'any' to get latest stable
+          channel: 'master'
           cache: true
 
       - name: Get Dependencies
