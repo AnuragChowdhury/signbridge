@@ -58,7 +58,6 @@ class SentenceBuilderService {
     }
 
     _buffer.write(character);
-    _lastAddedChar = character;
     _cursorPosition = _buffer.length;
 
     return text;
@@ -71,7 +70,6 @@ class SentenceBuilderService {
     if (text.endsWith(' ')) return null;
 
     _buffer.write(' ');
-    _lastAddedChar = ' ';
     _cursorPosition = _buffer.length;
 
     return text;
@@ -85,7 +83,6 @@ class SentenceBuilderService {
     _buffer.clear();
     _buffer.write(currentText.substring(0, currentText.length - 1));
     _cursorPosition = _buffer.length;
-    _lastAddedChar = null;
 
     return text;
   }
@@ -95,14 +92,12 @@ class SentenceBuilderService {
     _buffer.clear();
     _buffer.write(newText);
     _cursorPosition = _buffer.length;
-    _lastAddedChar = null;
   }
 
   /// Clears the entire text buffer.
   String clear() {
     _buffer.clear();
     _cursorPosition = 0;
-    _lastAddedChar = null;
 
     return '';
   }
